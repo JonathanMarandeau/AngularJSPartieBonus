@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>AngularJS PartieBonus Exercice 2</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  <style>
+    body{
+      font-family: 'Open Sans', sans-serif;
+    }
+  </style>
+  <body>
+    <div ng-app="appGenius" ng-controller="testCtrl">
+      <h1>AngularJS PartieBonus Exercice 2</h1>
+      <p>Faire un bouton qui affiche une alerte dès que l'on clique dessus.</p>
+      <button ng-click="clicked()">Push Me Baby :o </button>
+    </div>
+    <script>
+    var app = angular.module('appGenius', []);
+    app.controller('testCtrl', ['$scope',function($scope) {
+      $scope.clicked = function(){
+        alert("Vous venez de cliquer sur le boutton ! Bravo Champion !");
+      }
+    }]);
+    </script>
+  </body>
+</html>
