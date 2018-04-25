@@ -18,7 +18,9 @@
       <button ng-click="clicked()">Push Me Baby :o </button>
     </div>
     <script>
+    //Création d'un module angular
     var app = angular.module('appGenius', []);
+    //Création du controller qui appel le $scope
     app.controller('testCtrl', ['$scope',function($scope) {
       $scope.clicked = function(){
         alert("Vous venez de cliquer sur le boutton ! Bravo Champion !");

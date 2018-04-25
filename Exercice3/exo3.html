@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+    <title>AngularJS PartieBonus Exercice 3</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="script.js">
+  </head>
+  <body ng-app="appGenius" ng-controller="testCtrl">
+    <h1>AngularJS PartieBonus Exercice 3</h1>
+    <p>Faire un formulaire avec les champs nom, e-mail, sujet et texte. Le champ texte doit être un textarea. Chaque champ doit avoir son propre message d'erreur si la saisie est incorrecte.</p>
+    <p>Suite:<br/>
+      Ajouter un bouton envoyer. Au clic ajouter en dessous du formulaire le sujet du mail. Au clic sur un sujet afficher une autre vue avec les autres données saisies (nom, email, sujet et texte).</p>
+    <h2>Début de l'exercice</h2>
+    <div><!--div qui englobe la totalité de l'exercice-->
+      <form class="userForm" name="userForm">
+        <fieldset>
+          <!--Création des label, input et span. Les span contiennent des ng-show pour s'assurer
+              de la validité des informations. on prend le nom du form avec userForm auquel on
+              lui spécifie le l'attribut du label puis on juge la validité avec $invalid-->
+          <label for="lastName">Nom : <input type="text" name="lastName" placeholder="Nom" ng-model="lastName"id="lastName" required /></label><!--ID doit etre identique a celui du for dans le label-->
+              <span class="false" ng-show="userForm.lastName.$invalid">Votre nom est requis !</span><br/>
+          <label for="eMail">E-Mail : <input type="email" name="eMail" placeholder="Votre e-mail" ng-model="eMail" id="eMail" required /></label>
+              <span class="false" ng-show="userForm.eMail.$invalid">Votre e-mail est requis !</span><br/>
+          <label for="subject">Sujet : <input type="text" name="subject" placeholder="Sujet"  ng-model="subject" id="subject" required /></label>
+              <span class="false" ng-show="userForm.subject.$invalid">Un sujet est requis !</span><br/>
+          <label for="yourDemand">Votre demande : <textarea name="yourDemand" rows="8" cols="40" ng-model="yourDemand" id="yourDemand" required /></textarea></label>
+              <span class="false" ng-show="userForm.yourDemand.$invalid">Vous devez rédiger votre demande !</span><br/>
+          <button type="submit" name="button" ng-click="subject">Envoyer</button>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

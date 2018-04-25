@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script><!-- CDN Online -->
+  <link rel="stylesheet" href="style.css" />
+  <title>Exercice 1</title>
+</head>
+<body>
+  <h1>Exercice 1 Partie BONUS</h1>
+  <h2>Faire un formulaire de saisie d'adresse e-mail. Si l'adresse comporte le symbole @, alors une div verte apparait. S'il n'est pas là, une div rouge apparaît pour avertir l'utilisateur que sa saisie est incorrecte.</h2>
+  <!--
+    on recupère le valeur false et true via le type email de l'input : form name . input name . $valid
+    on donne la valeur au ng-show et ng-hide
+  -->
+  <form name="formMail" ng-app>
+    <fieldset>
+      <legend>Newslettre e2N</legend>
+        <label for="mail">Veuillez indiquer votre adresse mail : <input ng-model="ngMail" ng-pattern="/@/" type="text" name="mail" id="mail" required></label>
+        <div ng-init="valid1 = false" ng-show="valid1" id="greenDiv"></div><div ng-init="valid2 = true" ng-hide="valid2" id="redDiv"></div>
+        <button ng-click="valid1 = formMail.mail.$valid ; valid2 = formMail.mail.$valid"> SOUSCRIRE </button>
+    </fieldset>
+  </form>
+</body>
+</html>

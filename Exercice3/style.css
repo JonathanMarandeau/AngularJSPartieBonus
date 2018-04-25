@@ -1,0 +1,13 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+form{
+  text-align: center;
+}
+h2{
+  text-align: center;
+  color: blue;
+}
+.false{
+  color: red;
+}
